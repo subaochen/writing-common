@@ -9,7 +9,7 @@
 \definecolor{light-blue}{rgb}{0.8,0.85,1}
 
 \newlength\LabelSize
-\setlength\LabelSize{3.5cm}
+\setlength\LabelSize{2.5cm}
 
 % auxiliary counter
 \newcounter{chapshift}
@@ -18,8 +18,8 @@
 \AtBeginDocument{%
 \regtotcounter{chapter}
 \setlength\LabelSize{\dimexpr\textheight/\totvalue{chapter}\relax}
-\ifdim\LabelSize>3.5cm\relax
-  \global\setlength\LabelSize{3.5cm}
+\ifdim\LabelSize>2.5cm\relax
+  \global\setlength\LabelSize{2.5cm}
 \fi
 }
 
