@@ -11,8 +11,9 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}    % 清空页眉页脚
-\fancyhead[LE,RO]{\leftmark}
-\fancyhead[LO,RE]{\thepage}
+\fancyhead[RE]{\leftmark} %一级标题
+\fancyhead[LO]{\rightmark}%二级标题
+\fancyhead[RO,LE]{\thepage}
 \setlength{\headheight}{14pt} % 重新设置fancyhdr的headheight，避免报告Package Fancyhdr Warning: \headheight is too small (12.0pt)
 
 \input{/home/subaochen/git/writing-common/translations.tex}

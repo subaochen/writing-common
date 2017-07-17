@@ -17,8 +17,12 @@
 %\usepackage{beamerarticle}
 % 页眉页脚设置
 \usepackage{fancyhdr}
+\usepackage{calc}
 \pagestyle{fancy} % 默认的效果也可以接受
 \fancyhf{}                     % 清空页眉页脚
+%页眉长度也包括边注
+%TODO 页眉是否包含边注，取决于是否大量使用边注。如果没有使用边注可注释此行
+\fancyheadoffset[RO,LE]{\marginparset+\marginparwidth}
 \fancyhead[LE,RO]{\thepage}    % 页码：偶数页左,奇数页右
 \fancyhead[RE]{\leftmark}      % 偶数页右
 \fancyhead[LO]{\rightmark}     % 奇数页左
@@ -27,6 +31,7 @@
     \cfoot{\thepage} % 页脚中间显示页码
     \renewcommand{\headrulewidth}{0pt} % 清除页眉线
 }
+
 % 重新设置fancyhdr的headheight，避免报告Package Fancyhdr Warning: \headheight is too small (12.0pt)
 \setlength{\headheight}{14pt} 
 
