@@ -9,16 +9,20 @@
 % A4版本，适合打印
 %\usepackage[paperheight=297mm, paperwidth=210mm, marginpar=2cm,top=1.65cm,bottom=1.65cm,left=2cm,right=2cm]{geometry}
 
+% 在每一页显示4个切割标志
+% FIXME使用A4打印出版，需要根据实际打印纸张尺寸设定
+\usepackage[cam,a4,center]{crop}
+
 % 确定使用了tikz绘制的图片并且在图片中包含beamer中的overlay设置才需要此宏包
 %\usepackage{beamerarticle}
 % 页眉页脚设置
 \usepackage{fancyhdr}
 \pagestyle{fancy} % 默认的效果也可以接受
-\fancyhf{}                                                  % 清空页眉页脚
-\fancyhead[LE,RO]{\thepage}                                 % 页码：偶数页左,奇数页右
-\fancyhead[RE]{\leftmark}                                   % 偶数页右
-\fancyhead[LO]{\rightmark}                                  % 奇数页左
-\fancypagestyle{plain}{ % 重新定义plain样式，在章等的首页使用plain样式 
+\fancyhf{}                     % 清空页眉页脚
+\fancyhead[LE,RO]{\thepage}    % 页码：偶数页左,奇数页右
+\fancyhead[RE]{\leftmark}      % 偶数页右
+\fancyhead[LO]{\rightmark}     % 奇数页左
+\fancypagestyle{plain}{ % 重新定义plain样式，在章等的首页使用plain样式
     \fancyhf{}
     \cfoot{\thepage} % 页脚中间显示页码
     \renewcommand{\headrulewidth}{0pt} % 清除页眉线
@@ -48,3 +52,4 @@
 %\renewcommand{\CJKglue}{\hskip 0.9bp plus 0.03\baselineskip minus 0.03\baselineskip}
 \input{/home/subaochen/git/writing-common/translations.tex}
 \input{/home/subaochen/git/writing-common/listing.tex}
+\input{/home/subaochen/git/writing-common/margin-chapter.tex}
