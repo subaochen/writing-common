@@ -1,0 +1,21 @@
+\documentclass{article}
+%\documentclass{ctexart}
+%\usepackage{fontspec}
+\usepackage{ctex}
+%\setmainfont[Mapping=tex-text]{DejaVu Sans}
+%\setsansfont[Mapping=tex-text]{DejaVu Serif}
+%\setmonofont{DejaVu Sans Mono}
+%\usepackage{mathptmx}
+\usepackage{beamerarticle}
+\usepackage{tikz}
+%\usepackage{color}
+%\usepackage[active,pdftex,tightpage]{preview}
+\usepackage[active,luatex,tightpage]{preview}
+\PreviewEnvironment[]{tikzpicture}
+\PreviewEnvironment[]{pgfpicture}
+\DeclareSymbolFont{symbolsb}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsb}{bold}{OMS}{cmsy}{b}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{symbolsb}
+\begin{document}
+<>
+\end{document}

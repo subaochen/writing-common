@@ -1,0 +1,36 @@
+% 解决了在artice/book中包含tikz图片问题：可以使用beamer的overlay，
+% 参见：https://tex.stackexchange.com/questions/201114/how-can-i-include-something-with-overlay-specifications-in-a-non-beamer-class-do
+%\usepackage{beamerarticle}
+
+%\usepackage{xcolor}
+%\usepackage{tikz}
+% 目录样式：解决目录中的省略号太稀疏问题
+%\usepackage{tocloft} %暂时不需要这么重量级的宏包
+\renewcommand\@dotsep{1} %默认值是4.5
+
+% 图片样式：caption字体小一号，参见caption package guide
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+\captionsetup[table]{position=above}
+\captionsetup[longtable]{position=top}
+
+% 表格样式
+% caption在表格上面
+% 表格字体小一号
+% 需要分别定义table、longtable（figure）的属性
+%\usepackage{floatrow}
+%\floatsetup[table]{font=small,capposition=top}
+%\floatsetup[longtable]{font=small,capposition=top}
+% floatrow破坏了longtable水平中央对齐，在这里恢复，但是不知道有没有其他危害
+% 参考：https://tex.stackexchange.com/questions/320592/floatrow-package-conflicting-with-centering-longtable
+%\setlength\LTleft{\fill}
+%\setlength\LTright{\fill}
+%\DeclareMarginSet{centering}{\setfloatmargins{\hfill}{\hfill} \LTleft=\fill \LTright=\fill}
+
+% 暂时解决lualatex的兼容性问题，参见：https://github.com/CTeX-org/ctex-kit/issues/283
+\newdimen\cht
+\newdimen\cdp
+
+% 脚注的样式修改为带圈数字
+% 参见<LaTeX入门>P119
+\usepackage{pifont}
+\renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
