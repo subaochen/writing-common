@@ -1,3 +1,4 @@
+% 在页边显示章节序号
 \usepackage[contents={},opacity=1,scale=1,color=white]{background}
 \usepackage{tikzpagenodes}
 \usepackage{totcount}
@@ -13,14 +14,17 @@
 
 % auxiliary counter
 \newcounter{chapshift}
+\setcounter{chapshift}{-1}
 \DeclareAssociatedCounters{chapter}{chapshift}
 
 \AtBeginDocument{%
-\regtotcounter{chapter}
-\setlength\LabelSize{\dimexpr\textheight/\totvalue{chapter}\relax}
-\ifdim\LabelSize>2.5cm\relax
-  \global\setlength\LabelSize{2.5cm}
-\fi
+    \regtotcounter{chapter}
+    \ifnum\totvalue{chapter}>0\relax
+        \setlength\LabelSize{\dimexpr\textheight/\totvalue{chapter}\relax}
+        \ifdim\LabelSize>2.5cm\relax
+            \global\setlength\LabelSize{2.5cm}
+        \fi
+    \fi
 }
 
 \newcommand\AddLabels{%
