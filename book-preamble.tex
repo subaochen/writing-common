@@ -20,12 +20,15 @@
 %\usepackage{beamerarticle}
 % 页眉页脚设置
 \usepackage{fancyhdr}
-\usepackage{calc}
+%\usepackage{calc}
 \pagestyle{fancy} % 默认的效果也可以接受
 \fancyhf{}                     % 清空页眉页脚
 %页眉长度也包括边注
 %TODO 页眉是否包含边注，取决于是否大量使用边注。如果没有使用边注可注释此行
-\fancyheadoffset[RO,LE]{\marginparsep+\marginparwidth}
+%FIXME 存在两个问题：
+% 1, 如果页眉包括边注，则页边章序号导航会遮盖部分页眉
+% 2, 导入calc宏包似乎会导致assoccnt宏包失效，即页边章序号导航无法产生争取的章序号
+%\fancyheadoffset[RO,LE]{\marginparsep+\marginparwidth}
 \fancyhead[LE,RO]{\thepage}    % 页码：偶数页左,奇数页右
 \fancyhead[RE]{\leftmark}      % 偶数页右
 \fancyhead[LO]{\rightmark}     % 奇数页左
@@ -58,6 +61,6 @@
 }
 % 调整字间距,I don't know the effect,也许ctex已经这样设置了，需要调查?
 %\renewcommand{\CJKglue}{\hskip 0.9bp plus 0.03\baselineskip minus 0.03\baselineskip}
-\input{/home/subaochen/git/writing-common/translations.tex}
 \input{/home/subaochen/git/writing-common/listing.tex}
+\input{/home/subaochen/git/writing-common/translations.tex}
 \input{/home/subaochen/git/writing-common/margin-chapter.tex}
