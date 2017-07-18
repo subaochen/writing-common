@@ -24,7 +24,7 @@
     \message{chapter totvalue is \totvalue{chapter}}
     \ifnum\totvalue{chapter}>0\relax
         \setlength\LabelSize{\dimexpr\textheight/\totvalue{chapter}\relax}
-        \ifdim\LabelSize>2.5cm\relax
+        \ifdim\LabelSize>2.5cm\relax%TODO没有考虑\LabelSize过小的情况？
             \global\setlength\LabelSize{2.5cm}
         \fi
     \fi
@@ -39,7 +39,7 @@
   angle=90,
   position={current page.east|-current page text area.north  east},
   vshift=12pt,
-  hshift=-\thechapshift*\LabelSize,%是否可以根据hshift超出了\textheight来进行回退处理？
+  hshift=-\thechapshift*\LabelSize,%TODO是否可以根据hshift超出了\textheight来进行回退处理？可以有效解决\LabelSize过小的情形
   contents={%
   \tikz\node[fill=light-blue,anchor=west,text width=\LabelSize,
     align=center,text height=15pt,text depth=13pt,font=\large\sffamily] {\thechapter};
