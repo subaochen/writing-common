@@ -1,8 +1,10 @@
+% see https://tex.stackexchange.com/questions/202450/show-current-chapter-number-on-each-page-margin-with-appendix
+% 在\appendix之前执行\cleardoublepage
 % 在页边显示章节序号
 \usepackage[contents={},opacity=1,scale=1,color=white]{background}
 \usepackage{tikzpagenodes}
 \usepackage{totcount}
-\usepackage{shorttoc}
+%\usepackage{shorttoc}
 \usetikzlibrary{calc}
 \usepackage{assoccnt}
 
@@ -19,6 +21,7 @@
 
 \AtBeginDocument{%
     \regtotcounter{chapter}
+    \message{chapter totvalue is \totvalue{chapter}}
     \ifnum\totvalue{chapter}>0\relax
         \setlength\LabelSize{\dimexpr\textheight/\totvalue{chapter}\relax}
         \ifdim\LabelSize>2.5cm\relax
@@ -36,7 +39,7 @@
   angle=90,
   position={current page.east|-current page text area.north  east},
   vshift=12pt,
-  hshift=-\thechapshift*\LabelSize,
+  hshift=-\thechapshift*\LabelSize,%是否可以根据hshift超出了\textheight来进行回退处理？
   contents={%
   \tikz\node[fill=light-blue,anchor=west,text width=\LabelSize,
     align=center,text height=15pt,text depth=13pt,font=\large\sffamily] {\thechapter};
