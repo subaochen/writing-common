@@ -1,0 +1,7 @@
+% 在页边显示一个代码索引序号
+\newcommand{\srcidx}[1]{%
+    \makebox[0pt][l]{%
+        \makebox[\linewidth+\marginparsep][l]{}%
+            \fbox{#1}%
+    }%
+}
