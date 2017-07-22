@@ -1,6 +1,11 @@
 %%%%%%%%%%%%%%%%%%
 % 标题左对齐
+% 修复丢失编号问题的方法：
+% sudo wget http://mirrors.ctan.org/macros/latex/contrib/titlesec/titlesec.sty -O /usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+% 参见：https://tex.stackexchange.com/questions/299969/titlesec-loss-of-section-numbering-with-the-new-update-2016-03-15
+% 但是打开后，依然会造成章节失去中文翻译和“前言”、“目录”等没有居中，需要进一步调查原因
 %\usepackage[raggedright]{titlesec}
+
 % 页边距设置
 % marginpar=2cm解决margin note在ctex book下无法留出足够空白问题
 % 标准的16开，适合于计算机类图书出版
