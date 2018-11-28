@@ -19,6 +19,10 @@
 \fancyhead[RO,LE]{\thepage}
 \setlength{\headheight}{14pt} % 重新设置fancyhdr的headheight，避免报告Package Fancyhdr Warning: \headheight is too small (12.0pt)
 
+% 表格字体小一号,标题在表格上面
+\usepackage{floatrow}
+\floatsetup[table]{font=small,capposition=top}
+
 \input{translations.tex}
 \input{article-listing.tex}
 \input{common.tex}
